@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Properties</title>
+</head>
+<body>
+
+  <button onclick="displayWindowProperties()">Get Window Properties</button>
+
+  <script>
+    function displayWindowProperties() {
+      // Get window width and height
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+
+      // Get current window URL
+      const windowURL = window.location.href;
+
+      // Check if the window is open or closed
+      const isWindowOpen = !window.closed;
+
+      // Create a new HTML page to display window properties
+      const newWindow = window.open('', '_blank');
+      newWindow.document.write(`
+        <html>
+          <head>
+            <title>Window Properties</title>
+          </head>
+          <body>
+            <h2>Window Properties:</h2>
+            <p>Width: ${windowWidth}px</p>
+            <p>Height: ${windowHeight}px</p>
+            <p>URL: ${windowURL}</p>
+            <p>Is Open: ${isWindowOpen ? 'Open' : 'Closed'}</p>
+          </body>
+        </html>
+      `);
+    }
+  </script>
+
+</body>
+</html>
